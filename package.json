@@ -1,0 +1,13 @@
+{
+    "name": "delete-gists",
+    "author": {
+        "name": "Ahmet Kizilay",
+        "url": "https://github.com/artsince"
+    },
+    "private": true,
+    "version": "0.0.0",
+    "dependencies": {
+        "mongoose": ">= 3.6.5",
+        "async": ">= 0.2.9"
+    }
+}
