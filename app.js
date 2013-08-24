@@ -5,7 +5,7 @@ var mongoose = require('mongoose');
 var models = require('./models')(mongoose);
 var Gist = models.Gist;
 
-mongoose.connect('mongodb://localhost/rssfeedtracker');
+mongoose.connect(cfg.mongo.connection_string);
 
 Gist.Gist.find(function (err, gists) {
     if(err) {
@@ -27,7 +27,6 @@ Gist.Gist.find(function (err, gists) {
 
         var req = https.request(gistDeletePostOptions, function (res) {
             res.setEncoding('utf8');
-            console.log(res.headers);
 
             if(res.statusCode === 204) {
                 console.log('deleted gist id: ' + gist.id);
