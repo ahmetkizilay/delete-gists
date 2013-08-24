@@ -7,6 +7,10 @@ var Gist = models.Gist;
 
 mongoose.connect(cfg.mongo.connection_string);
 
+/*
+  Read all the gist records from the database and delete them on GitHub Gist
+  The StatusCode for successful deletion is 204
+*/
 Gist.Gist.find(function (err, gists) {
     if(err) {
         throw err;
